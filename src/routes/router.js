@@ -4,12 +4,12 @@ router.get('/', (req, res) => {
   res.render('home');
 });
 
-router.get('/Sobre', (req, res) => {
-  res.render('Sobre');
+router.get('/Sugestao', (req, res) => {
+  res.render('Sugestao');
 });
 
-router.get('/Entrar', (req, res) => {
-  res.render('Entrar');
+router.get('/Presenca', (req, res) => {
+  res.render('Presenca');
 });
 
 module.exports = router;
