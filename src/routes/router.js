@@ -12,4 +12,11 @@ router.get('/Presenca', (req, res) => {
   res.render('Presenca');
 });
 
+router.post('/confirmarPresenca', (req, res) => {
+  const recebi = req.body;
+  console.log(recebi)
+
+  res.send('ok')
+})
+
 module.exports = router;
