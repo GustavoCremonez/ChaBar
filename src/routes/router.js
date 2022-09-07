@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const PresencaController = require('../Controller/PresencaController');
+const bodyParser = require('body-parser');
 
 router.get('/', (req, res) => {
   res.render('home');
@@ -12,11 +14,6 @@ router.get('/Presenca', (req, res) => {
   res.render('Presenca');
 });
 
-router.post('/confirmarPresenca', (req, res) => {
-  const recebi = req.body;
-  console.log(recebi)
-
-  res.send('ok')
-})
+router.post('/confirmarPresenca', PresencaController.ConfirmarPresenca);
 
 module.exports = router;
