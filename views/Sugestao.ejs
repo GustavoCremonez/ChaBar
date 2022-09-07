@@ -1,76 +1,78 @@
 <%- include('partials/head.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
-<div class="container has-background-grey-lighter mt-auto">
-  <section class="section is-small mt-3">
-    <section class="hero is-danger">
-      <div class="hero-body">
-        <div class="tile is-parent">
-          <div class="tile is-child box has-text-primary">
-            <div class="content">
-              <h2 class="subtitle has-text-centered">
-                <span class="has-text-weight-normal has-text-primary">Itens que temos</span> 
-              </h2>
-              <ol type="1">
-                <li>Liquidificador</li>
-                <li>Batedeira</li>
-                <li>Potes de plástico</li>
-                <li>Copos de vidro</li>
-                <li>Utensílios de silicone</li>
-                <li>Talheres</li>
-                <li>Cooktop</li>
-                <li>Panelas</li>
-                <li>Garrafa de café</li>
-              </ol>
-            </div>
+<section class="section is-small mt-6">
+  <section class="hero is-danger">
+    <div class="hero-body">
+      <div class="tile is-parent">
+        <div class="tile is-child box has-text-primary">
+          <div class="content">
+            <h2 class="subtitle has-text-centered">
+              <span class="has-text-weight-normal has-text-primary">Itens que temos</span> 
+            </h2>
+            <ol type="1">
+              <li>Liquidificador</li>
+              <li>Batedeira</li>
+              <li>Potes de plástico</li>
+              <li>Copos de vidro</li>
+              <li>Utensílios de silicone</li>
+              <li>Talheres</li>
+              <li>Cooktop</li>
+              <li>Panelas</li>
+              <li>Garrafa de café</li>
+              
+              <% Presentes.forEach(presente => { %>
+                  <li><%= presente.Presente %></li>
+              <% }) %> 
+            </ol>
           </div>
         </div>
+      </div>
 
-        <div class="tile is-parent">
-          <div class="tile is-child box has-text-primary">
-            <div class="content">
-              <h2 class="subtitle has-text-centered">
-                <span class="has-text-weight-normal has-text-primary">Sugestões de presentes</span> 
-              </h2>
-              <ol type="1">
-                <li>Jodo de cama 4 pçs</li>
-                <li>Jogo de jantar</li>
-                <li>Escorredor de pratos metal</li>
-                <li>Jogo de toalha</li>
-                <li>Tabua de roupa</li>
-                <li>Kit limpeza(Vassoura, rodo, etc)</li>
-                <li>Jogo de facas</li>
-                <li>Galheteiro</li>
-                <li>Cesto de roupas</li>
-                <li>Escorredores (Arroz, Macarrão, Talheres etc)</li>
-                <li>Cortinas</li>
-                <li>Frigideira</li>
-                <li>Panela de pressão</li>
-                <li>Formas em geral</li>
-                <li>Assadeiras</li>
-                <li>Jarra de suco</li>
-                <li>Mantinha (Queen/King)</li>
-                <li>Potes/Tigelas/Vasilhas</li>
-                <li>Raladores/Espremedor/Descascador</li>
-                <li>Triturador elétrico</li>
-                <li>Toalha de mesa</li>
-                <li>Tigelas de sobremesa</li>
-                <li>Tapetes</li>
-                <li>Petisqueira</li>
-                <li>Jogo de colcha Queen 3pçs</li>
-                <li>Xícaras</li>
-                <li>TupperWare</li>
-                <li>Varal recolhível</li>
-                <li>Rodo mob spray</li>
-                <li>Sanduicheira</li>
-                <li>Travessa de vidro</li>
-              </ol>
-            </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box has-text-primary">
+          <div class="content">
+            <h2 class="subtitle has-text-centered">
+              <span class="has-text-weight-normal has-text-primary">Sugestões de presentes</span> 
+            </h2>
+            <ol type="1">
+              <li>Jodo de cama 4 pçs</li>
+              <li>Jogo de jantar</li>
+              <li>Escorredor de pratos metal</li>
+              <li>Jogo de toalha</li>
+              <li>Tabua de roupa</li>
+              <li>Kit limpeza(Vassoura, rodo, etc)</li>
+              <li>Jogo de facas</li>
+              <li>Galheteiro</li>
+              <li>Cesto de roupas</li>
+              <li>Escorredores (Arroz, Macarrão, Talheres etc)</li>
+              <li>Cortinas</li>
+              <li>Frigideira</li>
+              <li>Panela de pressão</li>
+              <li>Formas em geral</li>
+              <li>Assadeiras</li>
+              <li>Jarra de suco</li>
+              <li>Mantinha (Queen/King)</li>
+              <li>Potes/Tigelas/Vasilhas</li>
+              <li>Raladores/Espremedor<br>/Descascador</li>
+              <li>Triturador elétrico</li>
+              <li>Toalha de mesa</li>
+              <li>Tigelas de sobremesa</li>
+              <li>Tapetes</li>
+              <li>Petisqueira</li>
+              <li>Jogo de colcha Queen 3pçs</li>
+              <li>Xícaras</li>
+              <li>TupperWare</li>
+              <li>Varal recolhível</li>
+              <li>Rodo mob spray</li>
+              <li>Sanduicheira</li>
+              <li>Travessa de vidro</li>
+            </ol>
           </div>
         </div>
-    </section>
+      </div>
   </section>
-</div>
+</section>
 
 <%- include('partials/footer.ejs') %>
 <%- include('partials/foot.ejs') %>

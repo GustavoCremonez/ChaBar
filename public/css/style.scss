@@ -6,6 +6,7 @@
 
 $family-serif: "Rubik", serif;
 $family-primary: $family-serif;
+$container-max-width: 4000px;
 
 @import "../../node_modules/bulma/bulma.sass";
 
@@ -14,6 +15,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #f2f2f2;
 }
 body > footer {
     margin-top: auto;
