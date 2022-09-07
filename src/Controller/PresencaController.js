@@ -1,17 +1,11 @@
 const Presenca = require('../model/Presencas');
-const Presente = require('../model/Presentes');
 
-function  ConfirmarPresenca(req, res){
+async function  ConfirmarPresenca(req, res){
   const Nome = req.body.nome;
   const Acompanhantes = req.body.acompanhantes;
-  const NomePresente = req.body.presente;
+  const Presente = req.body.presente
 
-  console.log(NomePresente)
-  
-  const presente = new Presente({NomePresente});
-  const presenca = new Presenca({Nome, Acompanhantes});
-
-  presente.save();
+  const presenca = new Presenca({Nome, Acompanhantes, Presente});
 
   presenca.save()
     .then(() => {

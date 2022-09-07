@@ -8,7 +8,11 @@ const schema = new mongoose.Schema({
 	Acompanhantes: {
 		type: Number,
 		required: true,
-  }
+  },
+	Presente: {
+		type: String,
+		required: true,
+	},
 })
 
 const Model = mongoose.model('Presencas', schema)
