@@ -20,10 +20,6 @@
               <li>Cooktop</li>
               <li>Panelas</li>
               <li>Garrafa de café</li>
-              
-              <% Presentes.forEach(presente => { %>
-                  <li><%= presente.Presente %></li>
-              <% }) %> 
             </ol>
           </div>
         </div>
@@ -36,37 +32,9 @@
               <span class="has-text-weight-normal has-text-primary">Sugestões de presentes</span> 
             </h2>
             <ol type="1">
-              <li>Jodo de cama 4 pçs</li>
-              <li>Jogo de jantar</li>
-              <li>Escorredor de pratos metal</li>
-              <li>Jogo de toalha</li>
-              <li>Tabua de roupa</li>
-              <li>Kit limpeza(Vassoura, rodo, etc)</li>
-              <li>Jogo de facas</li>
-              <li>Galheteiro</li>
-              <li>Cesto de roupas</li>
-              <li>Escorredores (Arroz, Macarrão, Talheres etc)</li>
-              <li>Cortinas</li>
-              <li>Frigideira</li>
-              <li>Panela de pressão</li>
-              <li>Formas em geral</li>
-              <li>Assadeiras</li>
-              <li>Jarra de suco</li>
-              <li>Mantinha (Queen/King)</li>
-              <li>Potes/Tigelas/Vasilhas</li>
-              <li>Raladores/Espremedor<br>/Descascador</li>
-              <li>Triturador elétrico</li>
-              <li>Toalha de mesa</li>
-              <li>Tigelas de sobremesa</li>
-              <li>Tapetes</li>
-              <li>Petisqueira</li>
-              <li>Jogo de colcha Queen 3pçs</li>
-              <li>Xícaras</li>
-              <li>TupperWare</li>
-              <li>Varal recolhível</li>
-              <li>Rodo mob spray</li>
-              <li>Sanduicheira</li>
-              <li>Travessa de vidro</li>
+              <% diferenca.forEach(item => { %>
+                <li><%= item.Presente %></li>
+              <% }) %> 
             </ol>
           </div>
         </div>

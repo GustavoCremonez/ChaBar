@@ -1,12 +1,14 @@
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-const db_host = process.env.DB_HOST
-const db_port = process.env.DB_PORT
-const db_name = process.env.DB_NAME
+const DB = process.env.DB
 
 function connect() {
-	mongoose.connect(`mongodb://${db_host}:${db_port}/${db_name}`)
+	mongoose.connect(
+		DB,
+      { useNewUrlParser: true, useUnifiedTopology: true },
+      () => console.log(" Mongoose is connected")
+    );
 
 	const db = mongoose.connection
 
