@@ -11,7 +11,7 @@ async function  ConfirmarPresenca(req, res){
     .then(() => {
       res
       .status(200)
-      .redirect('/Presenca');
+      .render('Presenca', {presencaMarcada: true});
     })
     .catch((error) => {
       res

@@ -20,7 +20,25 @@
     });
 
     });
-  </script>
-  <script src="../../public/main.js"></script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        const $notification = $delete.parentNode;
+
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
+
+        $delete.addEventListener('')
+      });
+    });
+
+    const button = document.querySelector('.button');
+
+    button.addEventListener('click', () => {
+      button.classList.add('is-loading')
+    })
+   </script>
+  
   </body>
 </html>

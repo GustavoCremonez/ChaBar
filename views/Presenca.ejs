@@ -1,7 +1,14 @@
 <%- include('partials/head.ejs') %>
 <%- include('partials/navbar.ejs') %>
 
-<section class="section is-small mt-6">
+<% if(presencaMarcada == true) { %> 
+  <div class="notification is-primary mt-6">
+    <button class="delete"></button>
+    Sua presença foi confirmada, muito obrigado por estar com a gente nesse momento tão importante!!!
+  </div>
+  <% } %> 
+
+<section class="section is-small mb-3">
   <section class="hero is-danger">
     <div class="hero-body">
       <div class="tile is-parent">
@@ -40,7 +47,6 @@
       </div>
   </section>
 </section>
-
 
 <%- include('partials/footer.ejs') %>
 <%- include('partials/foot.ejs') %>

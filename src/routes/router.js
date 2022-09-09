@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 router.get('/Sugestao', PrecisamosController.ListaSugestões);
 
 router.get('/Presenca', (req, res) => {
-  res.render('Presenca');
+  res.render('Presenca', {presencaMarcada: false});
 });
 
 router.post('/confirmarPresenca', PresencaController.ConfirmarPresenca);
