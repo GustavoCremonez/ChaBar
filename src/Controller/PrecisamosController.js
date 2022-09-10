@@ -1,27 +1,20 @@
-const Presenca = require('../model/Presencas');
 const Precisamos = require('../model/Precisamos');
 
-async function PresentesConfirmados() {
-  const confirmados = await Presenca.find();
-  
-  let presentesConfirmados = [];
-
-  confirmados.forEach(element => {
-    presentesConfirmados.push(element.Presente);
-  });
-
-  return presentesConfirmados;
-} 
-
-async function ListaSugestões(req, res){
-  const confirmados  = await PresentesConfirmados();
+async function ItensQueNaoTemos(confirmados){
   const precisamos = await Precisamos.find();
 
-  const diferenca = precisamos.filter( a => !confirmados.includes(a.Presente));
+  const ItensFaltantes = precisamos.filter( a => !confirmados.includes(a.Presente.Numero));
+  
+  return ItensFaltantes;
+}
 
-  res.render("Sugestao", {diferenca});
-} 
+async function PegaNomePresente(NumeroPresente) {
+  const presente  = await Precisamos.findOne({Numero: NumeroPresente}, '-_id Presente');
+
+  return presente
+}
 
 module.exports = {
-  ListaSugestões
+  ItensQueNaoTemos,
+  PegaNomePresente
 }

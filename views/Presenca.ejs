@@ -34,10 +34,16 @@
                 </div>
               </div>
 
-              <div class="field">
+              <div class="field"></div>
                 <label class="label">Presente: </label>
-                <div class="control">
-                  <input name="presente" class="input" type="text" placeholder="Qual presente escolheu">
+                <div class="select is-fullwidth">
+                  <select name="presente">
+                    <option>Selecione um presente</option>
+                    <% itens.forEach(item => { %>
+                      <option value=<%=item.Numero%>><%= item.Presente %></option>
+                    <% }) %>
+                    <option value="32">Outros</option> 
+                  </select>
                 </div>
               </div>
 

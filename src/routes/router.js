@@ -1,17 +1,21 @@
 const router = require('express').Router();
-const PresencaController = require('../Controller/PresencaController');
-const PrecisamosController = require('../Controller/PrecisamosController');
+const Service = require('../Service/AppService')
 
 router.get('/', (req, res) => {
   res.render('home');
 });
 
-router.get('/Sugestao', PrecisamosController.ListaSugestões);
+router.get('/Sugestao', async (req, res) => {
+  const itens = await Service.PegueItensFaltantes();
 
-router.get('/Presenca', (req, res) => {
-  res.render('Presenca', {presencaMarcada: false});
+  res.render('Sugestao', {itens})
 });
 
-router.post('/confirmarPresenca', PresencaController.ConfirmarPresenca);
+router.get('/Presenca', async (req, res) => {
+  const itens = await Service.PegueItensFaltantes();
+  res.render('Presenca', {presencaMarcada: false, itens});
+});
+
+router.post('/confirmarPresenca', Service.CadastrarPresenca);
 
 module.exports = router;
