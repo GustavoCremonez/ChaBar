@@ -3,7 +3,7 @@ const Precisamos = require('../model/Precisamos');
 async function ItensQueNaoTemos(confirmados){
   const precisamos = await Precisamos.find();
 
-  const ItensFaltantes = precisamos.filter( a => !confirmados.includes(a.Presente.Numero));
+  const ItensFaltantes = precisamos.filter( a => !confirmados.includes(a.Presente));
   
   return ItensFaltantes;
 }

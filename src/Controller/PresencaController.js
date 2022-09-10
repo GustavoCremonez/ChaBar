@@ -22,7 +22,7 @@ async function  ConfirmarPresenca(entidade){
       return true;
     })
     .catch((error) => {
-      return error
+      return error;
     })
   
 }
