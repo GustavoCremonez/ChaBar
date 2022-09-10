@@ -33,7 +33,7 @@
             </h2>
             <ol type="1">
               <% itens.forEach(item => { %>
-               <li><%= item.Presente  %></li>
+               <%if(item.Presente != "Outros") { %><li><%= item.Presente  %></li> <%}%>
               <% }) %> 
             </ol>
           </div>

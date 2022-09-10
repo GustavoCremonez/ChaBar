@@ -5,6 +5,14 @@ async function ItensQueNaoTemos(confirmados){
 
   const ItensFaltantes = precisamos.filter( a => !confirmados.includes(a.Presente));
   
+  const Outros = {
+    Presente: "Outros",
+    Numero: 32
+  }
+  
+  ItensFaltantes.push(Outros);
+  console.log(ItensFaltantes)
+
   return ItensFaltantes;
 }
 
