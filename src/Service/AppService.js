@@ -9,11 +9,26 @@ async function PegueItensFaltantes(){
   return itensFaltantes
 }
 
-async function CadastrarPresenca(req, res) {
+async function CadastrarPresenca(req, res) { 
   const Nome = req.body.nome, 
         Acompanhantes  = req.body.acompanhantes,
         Presente = req.body.presente;
 
+  const itens = await PegueItensFaltantes();
+
+  console.log(Presente)
+  if(!Nome) {
+    return res.render('Presenca', {presencaMarcada: false, itens, validacao: {valor: true, campo: 'nome'}})
+    }
+
+  if(!Acompanhantes || isNaN(Acompanhantes)){
+      return res.render('Presenca', {presencaMarcada: false, itens, validacao: {valor: true, campo: 'Acompanhantes'}})
+    }
+  if(Presente === 'Selecione um presente'){
+    return res.render('Presenca', {presencaMarcada: false, itens, validacao: {valor: true, campo: 'Presente'}})
+  }
+
+  
   const nomePresente = await PrecisamosController.PegaNomePresente(Presente);
 
   let Entidade = {
@@ -24,8 +39,7 @@ async function CadastrarPresenca(req, res) {
 
   PresencaController.ConfirmarPresenca(Entidade)
   .then(async () => {
-    const itens = await PegueItensFaltantes();
-    res.render('Presenca', {presencaMarcada: true, itens})
+    res.render('Presenca', {presencaMarcada: true, itens, validacao:{valor: false, campo: ''}})
   })
   .catch((error) => {
     throw(error);

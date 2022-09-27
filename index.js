@@ -9,6 +9,7 @@ require('dotenv').config();
 const app = express();
 const db = require('./src/database/connection');
 
+
 app.use(cors())
 db.connect();
 

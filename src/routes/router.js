@@ -13,7 +13,7 @@ router.get('/Sugestao', async (req, res) => {
 
 router.get('/Presenca', async (req, res) => {
   const itens = await Service.PegueItensFaltantes();
-  res.render('Presenca', {presencaMarcada: false, itens});
+  res.render('Presenca', {presencaMarcada: false, itens, validacao: {valor: false, campo: ''}});
 });
 
 router.post('/confirmarPresenca', Service.CadastrarPresenca);

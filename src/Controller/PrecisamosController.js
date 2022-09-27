@@ -11,7 +11,6 @@ async function ItensQueNaoTemos(confirmados){
   }
   
   ItensFaltantes.push(Outros);
-  console.log(ItensFaltantes)
 
   return ItensFaltantes;
 }

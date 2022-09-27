@@ -8,7 +8,16 @@
     <button class="delete"></button>
     Sua presença foi confirmada, muito obrigado por estar com a gente nesse momento tão importante!!!
   </div>
-  <% } %> 
+<% } %> 
+
+<% if(validacao.valor == true) { %> 
+  <div class="notification is-warning ">
+    <button class="delete"></button>
+    Por favor preencha todos os campos!!! (faltou preencher o campo de <%= validacao.campo %>)
+  </div>
+  
+<% } %> 
+
 
   <section class="hero is-danger">
     <div class="hero-body">
@@ -19,25 +28,25 @@
               <span class="has-text-weight-normal has-text-primary">Confirme sua presença!</span> 
             </h2>
             
-            <form action="/confirmarPresenca" class="box" method="POST">
+            <form action="/confirmarPresenca" class="box" method="POST" id="form">
               <div class="field">
                 <label class="label">Nome: </label>
                 <div class="control">
-                  <input name="nome" class="input" type="text" placeholder="Digite seu nome">
+                  <input name="nome" class="input" id="nome" type="text" placeholder="Digite seu nome">
                 </div>
               </div>
 
               <div class="field">
                 <label class="label">Acompanhantes: </label>
                 <div class="control">
-                  <input name="acompanhantes" class="input" type="text" placeholder="Quantos acompanhantes">
+                  <input name="acompanhantes" class="input" id="acompanhantes" type="text" placeholder="Quantos acompanhantes">
                 </div>
               </div>
 
               <div class="field"></div>
                 <label class="label">Presente: </label>
                 <div class="select is-fullwidth">
-                  <select name="presente">
+                  <select name="presente" id="presente">
                     <option>Selecione um presente</option>
                     <% itens.forEach(item => { %>
                       <option value=<%=item.Numero%>><%= item.Presente %></option>
@@ -46,7 +55,7 @@
                 </div>
               </div>
 
-              <button class="button is-fullwidth is-primary is-outlined is-centered">Confirmar</button>
+              <button class="button is-fullwidth is-primary is-outlined is-centered" type="submit">Confirmar</button>
             </form>
           </div>
         </div>
@@ -56,3 +65,5 @@
 
 <%- include('partials/footer.ejs') %>
 <%- include('partials/foot.ejs') %>
+
+
