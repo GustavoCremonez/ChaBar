@@ -2,15 +2,15 @@
 <%- include('partials/navbar.ejs') %>
 
 <section class="section is-small mt-6">
-  
-<% if(presencaMarcada == true) { %> 
+
+<% if(presencaMarcada && presencaMarcada == true) { %> 
   <div class="notification is-primary ">
     <button class="delete"></button>
     Sua presença foi confirmada, muito obrigado por estar com a gente nesse momento tão importante!!!
   </div>
 <% } %> 
 
-<% if(validacao.valor == true) { %> 
+<% if(validacao && validacao.valor == true) { %> 
   <div class="notification is-warning ">
     <button class="delete"></button>
     Por favor preencha todos os campos!!! (faltou preencher o campo de <%= validacao.campo %>)
