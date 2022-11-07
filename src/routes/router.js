@@ -1,19 +1,23 @@
 const router = require('express').Router();
-const Service = require('../Service/AppService')
+const Service = require('../Service/AppService');
 
-router.get('/', (req, res) => {
-  res.render('home');
+router.get('/', (_req, res) => {
+	res.render('home');
 });
 
-router.get('/Sugestao', async (req, res) => {
-  const itens = await Service.PegueItensFaltantes();
+router.get('/Sugestao', async (_req, res) => {
+	const itens = await Service.PegueItensFaltantes();
 
-  res.render('Sugestao', {itens})
+	res.render('Sugestao', { itens });
 });
 
-router.get('/Presenca', async (req, res) => {
-  const itens = await Service.PegueItensFaltantes();
-  res.render('Presenca', {presencaMarcada: false, itens, validacao: {valor: false, campo: ''}});
+router.get('/Presenca', async (_req, res) => {
+	const itens = await Service.PegueItensFaltantes();
+	res.render('Presenca', {
+		presencaMarcada: false,
+		itens,
+		validacao: '',
+	});
 });
 
 router.post('/confirmarPresenca', Service.CadastrarPresenca);

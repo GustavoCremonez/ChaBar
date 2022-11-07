@@ -10,12 +10,11 @@
   </div>
 <% } %> 
 
-<% if(validacao && validacao.valor == true) { %> 
+<% if(validacao !== '') { %> 
   <div class="notification is-warning ">
     <button class="delete"></button>
-    Por favor preencha todos os campos!!! (faltou preencher o campo de <%= validacao.campo %>)
+    Por favor preencha todos os campos!!! (faltou preencher o campo de <%= validacao %>)
   </div>
-  
 <% } %> 
 
 

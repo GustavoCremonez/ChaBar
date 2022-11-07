@@ -22,7 +22,7 @@ async function CadastrarPresenca(req, res) {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
-			validacao: { valor: true, campo: 'nome' },
+			validacao: 'nome',
 		});
 	}
 
@@ -30,14 +30,14 @@ async function CadastrarPresenca(req, res) {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
-			validacao: { valor: true, campo: 'Acompanhantes' },
+			validacao: 'Acompanhantes',
 		});
 	}
 	if (Presente === 'Selecione um presente') {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
-			validacao: { valor: true, campo: 'Presente' },
+			validacao: 'Presente',
 		});
 	}
 
@@ -54,7 +54,7 @@ async function CadastrarPresenca(req, res) {
 			res.render('Presenca', {
 				presencaMarcada: true,
 				itens,
-				validacao: { valor: false, campo: '' },
+				validacao: '',
 			});
 		})
 		.catch((error) => {
