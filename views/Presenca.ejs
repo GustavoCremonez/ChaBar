@@ -10,7 +10,7 @@
   </div>
 <% } %> 
 
-<% if(err !== '') { %> 
+<% if(locals.err) { %> 
   <div class="notification is-warning ">
     <button class="delete"></button>
     Por favor preencha todos os campos!!! (faltou preencher o campo de <%= err %>)

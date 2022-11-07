@@ -15,7 +15,7 @@ router.get('/Presenca', async (_req, res) => {
 	const itens = await Service.PegueItensFaltantes();
 	res.render('Presenca', {
 		presencaMarcada: false,
-		err: '',
+		err: false,
 		itens,
 	});
 });
