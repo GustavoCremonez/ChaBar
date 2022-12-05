@@ -12,11 +12,12 @@ router.get('/Sugestao', async (_req, res) => {
 });
 
 router.get('/Presenca', async (_req, res) => {
-	const itens = await Service.PegueItensFaltantes();
+	const itens = await Service.PegueItensFaltantes(),
+		error = '';
 	return res.render('Presenca', {
 		presencaMarcada: false,
 		itens,
-		err: false,
+		error,
 	});
 });
 

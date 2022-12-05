@@ -10,10 +10,10 @@
   </div>
 <% } %> 
 
-<% if(err && err != null || err != '') { %> 
+<% if(error && error !== '') { %> 
   <div class="notification is-warning ">
     <button class="delete"></button>
-    Por favor preencha todos os campos!!! (faltou preencher o campo de <%= err %>)
+    Por favor preencha todos os campos!!! (faltou preencher o campo de <%= error %>)
   </div>
 <% } %> 
 
