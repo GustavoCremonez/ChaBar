@@ -1,33 +1,33 @@
 const Presenca = require('../model/Presencas');
 
 async function PresentesConfirmados() {
-  const confirmados = await Presenca.find();
-  
-  let presentesConfirmados = [];
+	const confirmados = await Presenca.find();
 
-  confirmados.forEach(element => {
-    presentesConfirmados.push(element.Presente);
-  });
+	let presentesConfirmados = [];
 
-  return presentesConfirmados;
-} 
+	confirmados.forEach((element) => {
+		presentesConfirmados.push(element.Presente);
+	});
 
-async function  ConfirmarPresenca(entidade){
-  const { Nome, Acompanhantes, Presente} = entidade;
-  
-  const presencaSave = new Presenca({Nome, Acompanhantes, Presente});
+	return presentesConfirmados;
+}
 
-  await presencaSave.save()
-    .then(() => {
-      return true;
-    })
-    .catch((error) => {
-      return error;
-    })
-  
+async function ConfirmarPresenca(entidade) {
+	const { Nome, Acompanhantes, Presente } = entidade;
+
+	const presencaSave = new Presenca({ Nome, Acompanhantes, Presente });
+
+	await presencaSave
+		.save()
+		.then(() => {
+			return true;
+		})
+		.catch((error) => {
+			return error;
+		});
 }
 
 module.exports = {
-  ConfirmarPresenca,
-  PresentesConfirmados,
-}
+	ConfirmarPresenca,
+	PresentesConfirmados,
+};

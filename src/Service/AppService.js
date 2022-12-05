@@ -18,7 +18,7 @@ async function CadastrarPresenca(req, res) {
 
 	const itens = await PegueItensFaltantes();
 
-	if (!Nome) {
+	if (!Nome || Nome === null || Nome === undefined) {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
@@ -26,7 +26,12 @@ async function CadastrarPresenca(req, res) {
 		});
 	}
 
-	if (!Acompanhantes || isNaN(Acompanhantes)) {
+	if (
+		!Acompanhantes ||
+		isNaN(Acompanhantes) ||
+		Acompanhantes === null ||
+		Acompanhantes === undefined
+	) {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
@@ -34,7 +39,11 @@ async function CadastrarPresenca(req, res) {
 		});
 	}
 
-	if (Presente === 'Selecione um presente') {
+	if (
+		Presente === 'Selecione um presente' ||
+		Presente === null ||
+		Presente === undefined
+	) {
 		return res.render('Presenca', {
 			presencaMarcada: false,
 			itens,
@@ -52,17 +61,17 @@ async function CadastrarPresenca(req, res) {
 
 	PresencaController.ConfirmarPresenca(Entidade)
 		.then(async () => {
-			res.render('Presenca', {
+			return res.render('Presenca', {
 				presencaMarcada: true,
 				itens,
 				err: '',
 			});
 		})
 		.catch((error) => {
-			res.render('Presenca', {
+			return res.render('Presenca', {
 				presencaMarcada: false,
 				itens,
-				err: `${error}`,
+				err: error,
 			});
 		});
 }
