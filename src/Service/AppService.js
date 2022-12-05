@@ -33,6 +33,7 @@ async function CadastrarPresenca(req, res) {
 			err: 'Acompanhantes',
 		});
 	}
+
 	if (Presente === 'Selecione um presente') {
 		return res.render('Presenca', {
 			presencaMarcada: false,
@@ -58,7 +59,11 @@ async function CadastrarPresenca(req, res) {
 			});
 		})
 		.catch((error) => {
-			throw error;
+			res.render('Presenca', {
+				presencaMarcada: false,
+				itens,
+				err: `${error}`,
+			});
 		});
 }
 
